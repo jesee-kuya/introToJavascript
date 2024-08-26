@@ -1,4 +1,4 @@
 const str = "";
 const num = 0;
 const bool = true;
-const undef = 0;
+const undef = undefined;
