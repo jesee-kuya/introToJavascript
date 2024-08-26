@@ -4,9 +4,9 @@ const obj = {str : "jesee", num : 0, bool : 1 == 1, undef : undefined}
 const nested = {
     arr :[4, undefined, '2'],
     obj : {
-        str,
-        num,
-        bool,
+        str: "jesee",
+        num: 0,
+        bool: true,
     }
 
 }
