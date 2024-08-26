@@ -1,1 +1,1 @@
-const concatStr = (str, str1) => str + str1
+const concatStr = (str, str1) => String(str) + String(str1);
