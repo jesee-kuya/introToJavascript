@@ -28,5 +28,5 @@ function dogYears(n, age) {
             num = years / 164.79132
             break
     }
-    return num.toFixed(2)
+    return String(num.toFixed(2))
 }
