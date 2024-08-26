@@ -1,2 +1,2 @@
-const circular = {circular : circular}
+const circular = {circular : undefined}
 circular.circular = circular
