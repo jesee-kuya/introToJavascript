@@ -1,2 +1,2 @@
-let smalls = Number.MIN_VALUE
-let biggie = Number.MAX_VALUE
+let smalls = Infinity * -1
+let biggie = Infinity
