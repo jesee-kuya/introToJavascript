@@ -6,4 +6,4 @@
 // }
 
 const isPositive = (n) => n > 0 ? true : false;
-const abs = (n,n1) => isPositive(n) > isPositive(n1) ? n - n1 : n1 - n
+const abs = (n) => n < 0 ? n * -1 : n ;
