@@ -7,5 +7,5 @@ is.def = (n) => typeof n !== "undefined";
 is.arr = (n) => Array.isArray(n);
 is.obj = (n) => typeof n === "object" && !Array.isArray(n) && n !== null;
 is.fun = (n) => typeof n === "function";
-is.truthy = (n) => typeof n === Boolean(n);
-is.falsy = (n) => !is.truthy(n)
+is.truthy = (n) => Boolean(n);
+is.falsy = (n) => typeof n ;
