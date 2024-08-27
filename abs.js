@@ -5,4 +5,4 @@
 //     return true
 // }
 
-const isPositive = (n) => n >= 0
+const isPositive = (n) => n > 0
