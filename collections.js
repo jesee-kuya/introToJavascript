@@ -5,7 +5,7 @@ const setToStr = (n) => setToArr(n).join('');
 const strToArr = (n) => [...n];
 const strToSet = (n) => arrToSet(strToArr(n));
 const mapToObj = (n) => Object.fromEntries(n.entries());
-const objToArr = (n) => Object.keys(n);
+const objToArr = (n) => Array.from(n);
 const objToMap = (n) => new Map(Object.entries(n));
 const arrToObj = (n) => Object.assign({}, n);
 const strToObj = (n) => arrToObj(strToArr(n));
