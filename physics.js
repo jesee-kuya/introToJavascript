@@ -4,7 +4,7 @@ function getAcceleration(n) {
     } else if (n.Δv !== undefined && n.Δt != undefined) {
         return n.Δv / n.Δt;
     }else if (n.d !== undefined && n.t !== undefined) {
-        return (d * 2) / (t * t);
+        return (n.d * 2) / (n.t * n.t);
     }else {
         return "impossible";
     }
