@@ -19,10 +19,8 @@ function multiply(a,b) {
 function divide(a,b) {
     if (a === 0 || b === 0) {
         return 0
-    }else if (a < b) {
-        return 0
     }
-
+    
     let neg = false;
     if (a < 0 && b < 0) {
         neg = false;
@@ -57,4 +55,4 @@ function modulo(a,b) {
     return a - num
 }
 
-console.log(divide(123, -22))
+console.log(divide(0, 22))
