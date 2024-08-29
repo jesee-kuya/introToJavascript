@@ -55,4 +55,4 @@ function modulo(a,b) {
     return a - num
 }
 
-console.log(divide(0, 22))
+// console.log(divide(0, 22))
