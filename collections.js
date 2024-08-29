@@ -10,11 +10,11 @@ const objToMap = (n) => new Map(Object.entries(n));
 const arrToObj = (n) => Object.assign({}, n);
 const strToObj = (n) => arrToObj(strToArr(n));
 function superTypeOf(n) {
-    if (typeof n == 'undefined'){
-        return 'Undefined';
-    }else if (n === 'null') {
-        return 'Null';
+    if (typeof n === undefined){
+        return 'undefined';
+    }else if (n === null) {
+        return 'null';
     }else {
-        return Object.prototype.toString.call(n).slice(8).slice(0, -1);
+        return Object.prototype.toString.call(n).slice(8).slice(0, -1).toLowerCase();
     }
 }
