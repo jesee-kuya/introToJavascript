@@ -15,6 +15,6 @@ function superTypeOf(n) {
     }else if (n === 'null') {
         return 'null';
     }else {
-        return Object.prototype.toString.call(n).slice(8).slice(0, -1).toLowerCase();
+        return Object.prototype.toString.call(n).slice(8).slice(0, -1);
     }
 }
