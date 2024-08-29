@@ -43,6 +43,11 @@ function divide(a,b) {
 }
 
 function modulo(a,b) {
+    let neg = false;
+    if (a < 0) {
+        neg = true;
+    }
+
     let n1 = Math.abs(a);
     let n2 = Math.abs(b);
     let num = 0
@@ -51,7 +56,8 @@ function modulo(a,b) {
         num += n2
     }
     num -= n2
-    return n1 - num
+    let mod = n1 - num
+    return neg? -mod : mod
 }
 
-console.log(modulo(123, -22))
+// console.log(modulo(-123, 22))
