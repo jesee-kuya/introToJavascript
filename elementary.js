@@ -17,19 +17,31 @@ function multiply(a,b) {
 }
 
 function divide(a,b) {
-    if (a <= 0 || b <= 0) {
+    if (a === 0 || b === 0) {
         return 0
     }else if (a < b) {
         return 0
     }
+
+    let neg = false;
+    if (a < 0 && b < 0) {
+        neg = false;
+    }else if (a < 0 || b < 0) {
+        neg = true;
+    }
+
+    let n1 = Math.abs(a);
+    let n2 = Math.abs(b);
     let num = 0
     let count = -1
 
-    while (num <= a) {
-        num += b
+
+
+    while (num <= n1) {
+        num += n2
         count++
     }
-    return count
+    return neg? -count : count
 }
 
 function modulo(a,b) {
@@ -45,4 +57,4 @@ function modulo(a,b) {
     return a - num
 }
 
-console.log(divide(4, 2))
+console.log(divide(123, -22))
