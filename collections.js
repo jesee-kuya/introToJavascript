@@ -10,7 +10,7 @@ const objToMap = (n) => new Map(Object.entries(n));
 const arrToObj = (n) => Object.assign({}, n);
 const strToObj = (n) => arrToObj(strToArr(n));
 function superTypeOf(n) {
-    if (typeof n === undefined){
+    if (n === undefined){
         return 'undefined';
     }else if (n === null) {
         return 'null';
