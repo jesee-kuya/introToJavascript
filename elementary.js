@@ -23,9 +23,9 @@ function divide(a,b) {
         return 0
     }
     let num = 0
-    let count = 0
+    let count = -1
 
-    while (num < a) {
+    while (num <= a) {
         num += b
         count++
     }
@@ -45,4 +45,4 @@ function modulo(a,b) {
     return a - num
 }
 
-// console.log(divide(34, 78))
+console.log(divide(4, 2))
