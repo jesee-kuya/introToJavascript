@@ -26,7 +26,5 @@ function superTypeOf(n) {
         return 'String'
     } else if (n instanceof Number){
         return 'Number'
-    }else {
-        return typeof n;
     }
 }
