@@ -1,10 +1,19 @@
 function multiply(a,b) {
-    let num = 0
-    while (b !== 0) {
-        num += a
-        b--
+    let neg = true;
+    if (a < 0 && b < 0) {
+        neg = false;
+    }else if (a < 0 || b < 0) {
+        neg = true;
     }
-    return num
+    let n1 = Math.abs(a);
+    let n2 = Math.abs(b);
+    let num = 0;
+
+    while (n2 !== 0) {
+        num += n1;
+        n2--;
+    }
+    return neg? -num : num;
 }
 
 function divide(a,b) {
