@@ -19,6 +19,8 @@ function multiply(a,b) {
 function divide(a,b) {
     if (a <= 0 || b <= 0) {
         return 0
+    }else if (a < b) {
+        return 0
     }
     let num = 0
     let count = 0
@@ -42,3 +44,5 @@ function modulo(a,b) {
     num -= b
     return a - num
 }
+
+// console.log(divide(34, 78))
