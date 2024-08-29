@@ -43,16 +43,15 @@ function divide(a,b) {
 }
 
 function modulo(a,b) {
-    if (a <= 0 || b <= 0) {
-        return 0
-    }
+    let n1 = Math.abs(a);
+    let n2 = Math.abs(b);
     let num = 0
 
-    while (num < a) {
-        num += b
+    while (num < n1) {
+        num += n2
     }
-    num -= b
-    return a - num
+    num -= n2
+    return n1 - num
 }
 
-// console.log(divide(0, 22))
+console.log(modulo(123, -22))
