@@ -14,7 +14,7 @@ function divide(a,b) {
     let num = 0
     let count = 0
 
-    while (num !== a) {
+    while (num < a) {
         num += b
         count++
     }
