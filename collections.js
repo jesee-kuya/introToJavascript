@@ -12,6 +12,8 @@ const strToObj = (n) => arrToObj(strToArr(n));
 function superTypeOf(n) {
     if (n instanceof Set){
         return 'Set';
+    }else if (n instanceof Function){
+        return 'Function'
     }else if (n instanceof Map) {
         return 'Map';
     }else if (n instanceof Array) {
@@ -20,6 +22,10 @@ function superTypeOf(n) {
         return 'null';
     }else if (n instanceof Object){
         return 'Object'
+    }else if (n instanceof String){
+        return 'String'
+    } else if (n instanceof Number){
+        return 'Number'
     }else {
         return typeof n;
     }
