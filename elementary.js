@@ -1,5 +1,5 @@
 function multiply(a,b) {
-    let neg = true;
+    let neg = false;
     if (a < 0 && b < 0) {
         neg = false;
     }else if (a < 0 || b < 0) {
