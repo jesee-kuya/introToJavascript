@@ -11,9 +11,9 @@ const arrToObj = (n) => Object.assign({}, n);
 const strToObj = (n) => arrToObj(strToArr(n));
 function superTypeOf(n) {
     if (typeof n == 'undefined'){
-        return 'undefined';
+        return 'Undefined';
     }else if (n === 'null') {
-        return 'null';
+        return 'Null';
     }else {
         return Object.prototype.toString.call(n).slice(8).slice(0, -1);
     }
