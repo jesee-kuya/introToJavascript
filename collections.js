@@ -18,6 +18,8 @@ function superTypeOf(n) {
         return 'Array';
     }else if (n === null) {
         return 'null';
+    }else if (n instanceof Object){
+        return 'Object'
     }else {
         return typeof n;
     }
