@@ -1,43 +1,64 @@
-function round(arr) {
-    for (let i = 0; i < arr.length; i++) {
-        if (arr[i] < 0) {
-            arr[i] -= 0.5
-            arr[i] = parseInt(arr[i])
-        }else {
-            arr[i] += 0.5
-            arr[i] = parseInt(arr[i])
-        }
+function toNum(n) {
+    let num = Math.abs(n)
+    let count = 0
+
+    while (num > 1) {
+        num--
+        count++
     }
-    return arr
+    return count
 }
 
-function ceil(arr) {
-    for (let i = 0 ; i < arr.length; i++) {
-        if (arr[i] > 0) {
-            arr[i] += 1
-            arr[i] = parseInt(arr[i])
-        }else {
-            arr[i] = parseInt(arr[i])
-        }
+function round(n) {
+    let num = toNum(n)
+    let neg = false
+
+    if (n < 0) {
+        n = -n
+        neg = true
     }
-    return arr
+
+    let point = n - num
+
+    if (point >= 0.5) {
+        num += 1
+    }
+    return neg ? -num : num
 }
 
-function floor(arr) {
-    for (let i = 0 ; i < arr.length; i++) {
-        if (arr[i] < 0) {
-            arr[i] -= 1
-            arr[i] = parseInt(arr[i])
-        }else {
-            arr[i] = parseInt(arr[i])
-        }
+function ceil(n) {
+    let num = toNum(n)
+    let neg = false
+
+    if (n < 0) {
+        n = -n
+        neg = true
     }
-    return arr
+
+    return neg? -num : num + 1
 }
 
-function trunc(arr) {
-    for (let i = 0 ; i < arr.length; i++) {
-        arr[i] = parseInt(arr[i])
+function floor(n) {
+    let num = toNum(n)
+    let neg = false
+
+    if (n < 0) {
+        n = -n
+        neg = true
     }
-    return arr
+
+    return neg? -(num + 1) : num
 }
+
+function trunc(n) {
+    let num = toNum(n)
+    let neg = false
+
+    if (n < 0) {
+        neg = true
+    }
+    return neg? -num : num
+}
+
+
+
