@@ -1,6 +1,6 @@
-function join(arr, sep) {
-    if (sep === null) {
-        sep = ",";
+function join(arr, joiner) {
+    if (joiner === null) {
+        joiner = ",";
     }
     var result = arr[0].toString();
     for (var i = 1; i < arr.length; i++) {
