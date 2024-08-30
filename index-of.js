@@ -21,6 +21,7 @@ function lastIndexOf(arr, val, n) {
         for (let ind = n; ind >= 0; ind--) {
             if (arr[ind] === val) {
                 at = ind;
+                break
             }
         }
     }else {
