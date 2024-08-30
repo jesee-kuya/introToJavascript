@@ -2,8 +2,7 @@ const toNum = (n) => {
     let num = Math.abs(n)
     let count = 0
 
-    for (num >= 1) {
-        num--
+    for (let n = num;  n >= 1; n--) {
         count++
     }
     return count
