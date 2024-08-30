@@ -13,10 +13,13 @@ function slice(obj, in1, in2) {
         in1 = obj.length + in1
     }
 
-    console.log(in1)
 
     for (let i = in1; i < last; i++) {
-        n.push(obj[i])
+        if (obj instanceof Array) {
+            n.push(obj[i])
+        }else {
+            n += obj[i]
+        }
     }
     return n
 }
