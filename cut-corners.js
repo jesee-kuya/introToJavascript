@@ -2,7 +2,7 @@ function toNum(n) {
     let num = Math.abs(n)
     let count = 0
 
-    while (num > 1) {
+    while (num >= 1) {
         num--
         count++
     }
