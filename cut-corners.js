@@ -27,6 +27,9 @@ function round(n) {
 }
 
 function ceil(n) {
+    if (n === 0) {
+        return 0
+    }
     let num = toNum(n)
     let neg = false
 
@@ -59,6 +62,7 @@ function trunc(n) {
     }
     return neg? -num : num
 }
+
 
 
 
