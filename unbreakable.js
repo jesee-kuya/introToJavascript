@@ -4,7 +4,7 @@ function join(arr, joiner) {
     }
     var result = arr[0].toString();
     for (var i = 1; i < arr.length; i++) {
-        result += sep + arr[i];
+        result += joiner + arr[i];
     }
     return result;
 }
