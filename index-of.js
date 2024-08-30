@@ -46,7 +46,3 @@ function includes(arr, val, n) {
     }
     return false;
 }
-
-let t
-
-console.log(lastIndexOf([t, 0, 0, t], t, 2))
