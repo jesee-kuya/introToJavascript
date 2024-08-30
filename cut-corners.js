@@ -1,4 +1,4 @@
-function toNum(n) {
+const toNum = (n) => {
     let num = Math.abs(n)
     let count = 0
 
