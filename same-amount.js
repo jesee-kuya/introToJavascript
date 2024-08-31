@@ -10,7 +10,3 @@ function sameAmount(str, reg1, reg2) {
 
     return str1.length === str2.length
 }
-
-// console.log(sameAmount('hello how are you', /l/, /l/))
-let data = null
-console.log(sameAmount(data, /h/, /w/))
