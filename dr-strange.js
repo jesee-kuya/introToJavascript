@@ -22,7 +22,8 @@ function addWeek(date) {
 
 const timeTravel = (obj) => {
     let yr = obj.date.getFullYear();
-    let mn = obj.date.getMonth();
+    let mn = obj.date.getMonth() + 1;
+    console.log(mn)
     let dt = obj.date.getDate();
     let hr = obj.hour;
     let min = obj.minute;
