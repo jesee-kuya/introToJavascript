@@ -3,7 +3,7 @@ const dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Frida
 const addWeek = (date) => {
     let day = date.getDate();
     let i = date.getDay();
-    if (day % 14 > 7) {
+    if (day % 14 > 7 || day % 14 === 0) {
         return 'second' + dayNames[i];
     }
     return dayNames[i];
@@ -17,15 +17,12 @@ const timeTravel = (obj) => {
     let hr = obj.hour;
     let min = obj.minute;
     let sec = obj.second;
-    const futureDate = new Date(String(yr) + '-' +String(mn) + '-' + String(dt) + ' '  + hr + ':' + min + ':'+ sec);
-   return futureDate.toString();
+    return new Date(String(yr) + '-' +String(mn) + '-' + String(dt) + ' '  + hr + ':' + min + ':'+ sec);
 }
 
-let a ={
-    date: new Date('2020-05-29 23:25:22'),
-    hour: 21,
-    minute: 22,
-    second: 22,
-  }
-
-  console.log(timeTravel(a))
+// console.log(addWeek(new Date('0001-01-01')))
+// console.log(addWeek(new Date('0001-01-02')))
+// console.log(addWeek(new Date('0001-01-07')) )
+// console.log(addWeek(new Date('0001-01-08')))
+// console.log(addWeek(new Date('0001-01-09')) )
+// console.log(addWeek(new Date('0001-01-14')))
