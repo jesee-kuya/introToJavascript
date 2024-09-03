@@ -2,7 +2,7 @@ const firstDayWeek = (num, str) => {
     let week = (86400000 * num) * 7
     let date = new Date(str)
     let n = (date.getTime() + week) - (86400000 * 7)
-    while ((new Date(n).getDay()) !== 1) {
+    while ((new Date(n).getDay()) !== 1 && (new Date(n - 86400000 ).getYear()) === (new Date(n).getYear)) {
         n -= 86400000 
     }
     return changeFormat((new Date(n)).toLocaleDateString())
@@ -23,3 +23,5 @@ const changeFormat = (date) => {
     }
     return str.join('-')
 }
+
+console.log(firstDayWeek(1, '1000'))
