@@ -23,5 +23,11 @@ const changeFormat = (date) => {
             str[i] = '0' + str[i]
         }
     }
+
+    while (str[str.length - 1].length !== 4) {
+        str[str.length -1] = '0' + str[str.length -1]
+    }
     return str.join('-')
 }
+
+console.log(firstDayWeek(2, '0001'))
