@@ -37,7 +37,7 @@ const isLastDayOfMonth = (d) => {
         if (mn % 2 == 0) {
             return dayError(30, d)
         }else {
-            return dayError(32, d)
+            return dayError(31, d)
         }
     }
     return false
@@ -50,3 +50,4 @@ const dayError = (n, d) => {
         return false
     }
 }
+
