@@ -40,6 +40,7 @@ const isLastDayOfMonth = (d) => {
             return dayError(32, d)
         }
     }
+    return false
 }
 
 const dayError = (n, d) => {
