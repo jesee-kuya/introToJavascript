@@ -1,32 +1,39 @@
 function isValid(date) {
-    let n = new Date(date)
-    return String(n.valueOf()) !== 'NaN'
+    if (new Date(date).toString() === "Invalid Date") {
+        return false;
+    }
+    if (!(date instanceof Date) && typeof date !== "number") {
+        return false;
+    }
+    return true;
 }
 
-function isAfter(date, date1){
+const isAfter = (date, date1) => {
     let d1 = new Date(date).getTime()
     let d2 = new Date(date1).getTime()
     return d1 > d2
 }
 
-function isBefore(date, date1) {
+const isBefore = (date, date1) => {
     let d1 = new Date(date).getTime()
     let d2 = new Date(date1).getTime()
     return d1 < d2
 }
 
-function isFuture(date) {
+const isFuture = (date) => {
     let n = new Date(date)
-    if (String(n.valueOf()) === 'NaN') {
+    if (!isValid(date)) {
         return false
     }
     return new Date().getTime() < new Date(date).getTime()
 }
 
-function isPast(date) {
+const isPast = (date) => {
     let n = new Date(date)
-    if (String(n.valueOf()) === 'NaN') {
+    if (!isValid(date)) {
         return false
     }
     return new Date().getTime() > new Date(date).getTime()
 }
+
+console.log(isValid('201301'))
