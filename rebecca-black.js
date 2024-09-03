@@ -16,35 +16,33 @@ const isLeapYear = (date) => {
     return d.getYear() % 4 === 0;
 }
 
-const isLastDayOfMonth = (date) => {
-    let d = new Date(date);
+const isLastDayOfMonth = (d) => {
     let mn = d.getMonth()
 
     if (mn >= 0 && mn < 7) {
         if (mn === 1) {
-            switch (isLeapYear(date)) {
+            switch (isLeapYear(d)) {
                 case true:
-                    return dayError(29, date)
+                    return dayError(29, d)
                 default:
-                    return dayError(28, date)
+                    return dayError(28, d)
             }
         }
         if (mn % 2 == 0) {
-            return dayError(31, date)
+            return dayError(31, d)
         }else {
-            return dayError(30, date)
+            return dayError(30, d)
         }
     }else if (mn >= 7 && mn <= 11) {
         if (mn % 2 == 0) {
-            return dayError(30, date)
+            return dayError(30, d)
         }else {
-            return dayError(32, date)
+            return dayError(32, d)
         }
     }
 }
 
-const dayError = (n, date) => {
-    let d = new Date(date);
+const dayError = (n, d) => {
     if (d.getDate() === n) {
         return true
     }else {
