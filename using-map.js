@@ -58,7 +58,7 @@ const celsius = (x) => {
             n += x[i];
         };
     };
-    return String(Math.round((Number(n) - 32) * (5/9))) + '°Celsius';
+    return String(Math.floor((Number(n) - 32) * (5/9))) + '°Celsius';
 }
 
 const caps = (str) => {
