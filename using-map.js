@@ -6,13 +6,18 @@ const citiesOnly = (arr) => {
     return a
 }
 
-console.log(citiesOnly([
-    {
-      city: 'Los Angeles',
-      temperature: '  101 °F   ',
-    },
-    {
-      city: 'San Francisco',
-      temperature: ' 84 ° F   ',
-    },
-  ]))
+const upperCasingStates = (arr) => {
+    let arr1 = arr.map((x) => {
+        let nArr = x.split('')
+        nArr[0] = nArr[0].toUpperCase()
+        for (let i = 0; i < nArr.length; i++) {
+            if (nArr[i] === ' ') {
+                nArr[i + 1] = nArr[i + 1].toUpperCase()
+            }
+        }
+        return nArr.join('')
+    })
+    return arr1
+}
+
+console.log(upperCasingStates(['alabama', 'new jersey']))
