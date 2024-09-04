@@ -28,7 +28,7 @@ const fahrenheitToCelsius = (arr) => {
                 n += x[i];
             };
         };
-        return String(Math.round((Number(n) - 32) * (5/9))) + '°C';
+        return String(Math.ceil((Number(n) - 32) * (5/9))) + '°C';
     });
     return arr1;
 }
@@ -71,12 +71,3 @@ const caps = (str) => {
     };
     return x.join('')
 }
-
-console.log(tempForecasts([
-    {
-      city: 'Pasadena',
-      temperature: ' 101 °F',
-      state: 'california',
-      region: 'West',
-    },
-  ]))
