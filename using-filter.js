@@ -24,13 +24,10 @@ const filter1DistinctVowel = (arr) => {
         let n = []
         for (let i = 0; i < x.length; i++) {
             if (x[i].toLowerCase() === 'a' || x[i].toLowerCase() === 'e'|| x[i].toLowerCase() ==='i'|| x[i].toLowerCase() ==='o'|| x[i].toLowerCase() ==='u') {
-                n.push(x[i])
+                n.push(x[i].toLowerCase())
             }
         }
         let set = new Set(n)
-        if (set.size === 1) {
-            console.log(set)
-        }
         return set.size === 1? x : ''
     })
     return arr1
