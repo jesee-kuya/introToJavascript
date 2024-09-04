@@ -29,7 +29,7 @@ const fahrenheitToCelsius = (arr) => {
             };
         };
         return String(Math.round((Number(n) - 32) * (5/9))) + '°C';
-    })
+    });
     return arr1;
 }
 
@@ -38,11 +38,45 @@ const trimTemp = (arr) => {
         let tem = x.temperature.split(' ');
         x.temperature = tem.join('');
         return x;
-    })
+    });
     return arr1;
 }
 
-console.log(trimTemp([
-    { city: 'Los Angeles', temperature: '  101 °F   ' },
-    { city: 'San Francisco', temperature: ' 84 ° F   ' },
+// const tempForecasts = (arr) => {
+//     let arr1 = arr.map((x) => {
+//         x.temperature = celsius(x.temperature);
+//         x.state = caps(x.state)
+//         return x.temperature + ' in '+ x.city + ', '+ x.state
+//     })
+//     return arr1
+// }
+
+const celsius = (x) => {
+    let n = ''
+    for (let i = 0; i < x.length; i++) {
+        if (x[i] >= '0' && x[i] <= '9') {
+            n += x[i];
+        };
+    };
+    return String(Math.round((Number(n) - 32) * (5/9))) + '°Celsius';
+}
+
+// const caps = (str) => {
+//     let x = str.split('')
+//     x[0] = x[0].toUpperCase()
+//     for (let i = 0; i < x.length; i++) {
+//         if (x[i] === ' ') {
+//             x[i + 1] = x[i + 1].toUpperCase();
+//         };
+//     };
+//     return x.join('')
+// }
+
+console.log(tempForecasts([
+    {
+      city: 'Pasadena',
+      temperature: ' 101 °F',
+      state: 'california',
+      region: 'West',
+    },
   ]))
