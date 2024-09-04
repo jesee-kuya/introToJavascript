@@ -35,7 +35,7 @@ const filter1DistinctVowel = (arr) => {
 
 const multiFilter = (arr) => {
     let arr1 = arr.filter((x) => {
-
+        return (characters(x.capital) && notVowel(x.name) && hasVowel(x.tag) && notSouth(x.region))? x : '';
     })
 }
 
@@ -61,5 +61,3 @@ const hasVowel = (str) => {
 }
 
 const notSouth = (str) => str !== 'South';
-
-console.log(notSouth('js'))
