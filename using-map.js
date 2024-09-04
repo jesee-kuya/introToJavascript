@@ -61,16 +61,16 @@ const celsius = (x) => {
     return String(Math.round((Number(n) - 32) * (5/9))) + '°Celsius';
 }
 
-// const caps = (str) => {
-//     let x = str.split('')
-//     x[0] = x[0].toUpperCase()
-//     for (let i = 0; i < x.length; i++) {
-//         if (x[i] === ' ') {
-//             x[i + 1] = x[i + 1].toUpperCase();
-//         };
-//     };
-//     return x.join('')
-// }
+const caps = (str) => {
+    let x = str.split('')
+    x[0] = x[0].toUpperCase()
+    for (let i = 0; i < x.length; i++) {
+        if (x[i] === ' ') {
+            x[i + 1] = x[i + 1].toUpperCase();
+        };
+    };
+    return x.join('')
+}
 
 console.log(tempForecasts([
     {
