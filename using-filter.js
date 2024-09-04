@@ -18,5 +18,19 @@ const filter5Vowels = (arr) => {
     })
     return arr1
 }
+
+const filter1DistinctVowel = (arr) => {
+    let arr1 = arr.filter((x) => {
+        let n = []
+        for (let i = 0; i < x.length; i++) {
+            if (x[i] === 'a' || x[i] === 'e'|| x[i] ==='i'|| x[i] ==='o'|| x[i] ==='u') {
+                n.push(x[i])
+            }
+        }
+        let set = new Set(n)
+        return set.size === 1? x : ''
+    })
+    return arr1
+}
 const words = ['spray', 'elite', 'exuberanta', 'destruction', 'present', "Alabama"];
-console.log(filter5Vowels(words))
+console.log(filter1DistinctVowel(words))
