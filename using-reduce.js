@@ -24,5 +24,3 @@ const sumOrMul = (arr, initial) => {
 const funcExec = (arr) => {
     let arr1 = arr.reduce((accumulater, value) => accumulater + value)
 }
-const array1 = [0,1, 2, 3, 4];
-console.log(sumOrMul(array1, 5))
