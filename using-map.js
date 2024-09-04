@@ -20,4 +20,17 @@ const upperCasingStates = (arr) => {
     return arr1
 }
 
-console.log(upperCasingStates(['alabama', 'new jersey']))
+const fahrenheitToCelsius = (arr) => {
+    let arr1 = arr.map((x) => {
+        let n = ''
+        for (let i = 0; i < x.length; i++) {
+            if (x[i] >= '0' && x[i] <= '9') {
+                n += x[i]
+            }
+        }
+        return String(Math.round((Number(n) - 32) * (5/9))) + '°C'
+    })
+    return arr1
+}
+
+console.log(fahrenheitToCelsius(['68°F', '59°F', '25°F']))
