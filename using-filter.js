@@ -49,3 +49,15 @@ const notVowel = (str) => {
     let i = 0
     return (x[i] !== 'a' && x[i] !== 'e'&& x[i] !=='i'&& x[i] !=='o' && x[i] !=='u')
 }
+
+const hasVowel = (str) => {
+    let x = str.split('')
+    for (let i = 0; i < x.length; i++) {
+        if (x[i] === 'a' || x[i] === 'e'|| x[i] ==='i'|| x[i] ==='o'|| x[i] ==='u') {
+            return true
+        }
+    }
+    return false
+}
+
+console.log(hasVowel('js'))
