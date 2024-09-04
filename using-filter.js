@@ -60,4 +60,6 @@ const hasVowel = (str) => {
     return false
 }
 
-console.log(hasVowel('js'))
+const notSouth = (str) => str !== 'South';
+
+console.log(notSouth('js'))
