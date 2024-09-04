@@ -37,6 +37,7 @@ const multiFilter = (arr) => {
     let arr1 = arr.filter((x) => {
         return (characters(x.capital) && notVowel(x.name) && hasVowel(x.tag) && notSouth(x.region))? x : '';
     })
+    return arr1
 }
 
 
