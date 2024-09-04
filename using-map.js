@@ -28,7 +28,7 @@ const fahrenheitToCelsius = (arr) => {
                 n += x[i];
             };
         };
-        return String(Math.ceil((Number(n) - 32) * (5/9))) + '°C';
+        return String(Math.floor((Number(n) - 32) * (5/9))) + '°C';
     });
     return arr1;
 }
