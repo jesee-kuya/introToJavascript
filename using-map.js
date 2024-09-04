@@ -42,14 +42,14 @@ const trimTemp = (arr) => {
     return arr1;
 }
 
-// const tempForecasts = (arr) => {
-//     let arr1 = arr.map((x) => {
-//         x.temperature = celsius(x.temperature);
-//         x.state = caps(x.state)
-//         return x.temperature + ' in '+ x.city + ', '+ x.state
-//     })
-//     return arr1
-// }
+const tempForecasts = (arr) => {
+    let arr1 = arr.map((x) => {
+        x.temperature = celsius(x.temperature);
+        x.state = caps(x.state)
+        return x.temperature + ' in '+ x.city + ', '+ x.state
+    })
+    return arr1
+}
 
 const celsius = (x) => {
     let n = ''
