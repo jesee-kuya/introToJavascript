@@ -32,5 +32,20 @@ const filter1DistinctVowel = (arr) => {
     })
     return arr1
 }
+
+const multiFilter = (arr) => {
+    let arr1 = arr.filter((x) => {
+
+    })
+}
+
+
+const characters = (str) => {
+    return str.length >= 8
+}
+
+
+
+
 const words = ['spray', 'elite', 'exuberanta', 'destruction', 'present', "Alabama"];
 console.log(filter1DistinctVowel(words))
