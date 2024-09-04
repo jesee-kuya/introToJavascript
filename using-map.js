@@ -24,7 +24,7 @@ const fahrenheitToCelsius = (arr) => {
     let arr1 = arr.map((x) => {
         let n = '';
         for (let i = 0; i < x.length; i++) {
-            if (x[i] >= '0' && x[i] <= '9') {
+            if ((x[i] >= '0' && x[i] <= '9') || x[i] === '-') {
                 n += x[i];
             };
         };
