@@ -44,8 +44,8 @@ const characters = (str) => {
     return str.length >= 8
 }
 
-
-
-
-const words = ['spray', 'elite', 'exuberanta', 'destruction', 'present', "Alabama"];
-console.log(filter1DistinctVowel(words))
+const notVowel = (str) => {
+    let x = str.toLowerCase()
+    let i = 0
+    return (x[i] !== 'a' && x[i] !== 'e'&& x[i] !=='i'&& x[i] !=='o' && x[i] !=='u')
+}
