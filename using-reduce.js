@@ -1,26 +1,32 @@
-const adder = (arr, initial) => arr.reduce((accumulater, value) => accumulater+value,initial)
-
-const sumOrMul = (arr, initial) => {
-    let arr1 = arr.reduce((accumulater, value) => {
-        if ((value % 2 === 0 && value !== 1)){
-            if (initial !== undefined) {
-                accumulater = initial
-                initial = undefined
-            }
-            accumulater *= value
-        } else {
-            if (initial !== undefined) {
-                accumulater = initial
-                initial = undefined
-            }
-            accumulater += value
-        }
-        return accumulater   
-    })
-    return arr1
+function adder(arr, value) {
+    return arr.reduce(
+        (acc, item) => acc + item,
+        value === undefined ? 0 : value
+    );
 }
 
+function sumOrMul(arr, value) {
+    return arr.reduce(
+        (acc, item) => {
+            if (item % 2 === 0) {
+                return acc * item;
+            } else {
+                return acc + item;
+            }
+        },
+        value === undefined ? 0 : value
+    );
+}
 
-const funcExec = (arr) => {
-    let arr1 = arr.reduce((accumulater, value) => accumulater + value)
+function funcExec(arr, value) {
+    return arr.reduce(
+        (acc, item) => {
+            if (typeof item === "function") {
+                return item(acc, value);
+            } else {
+                return acc;
+            }
+        },
+        value === undefined ? 0 : value
+    );
 }
