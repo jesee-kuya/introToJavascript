@@ -28,6 +28,9 @@ const filter1DistinctVowel = (arr) => {
             }
         }
         let set = new Set(n)
+        if (set.size === 1) {
+            console.log(set)
+        }
         return set.size === 1? x : ''
     })
     return arr1
