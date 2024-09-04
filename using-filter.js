@@ -3,14 +3,14 @@ const filterShortStateName = (arr) => {
 }
 
 const filterStartVowel = (arr) => {
-    return arr.filter((x) => (x[0] === 'a' || x[0] === 'e'|| x[0] ==='i'|| x[0] ==='o'|| x[0] ==='u'))
+    return arr.filter((x) => (x[0].toLowerCase() === 'a' || x[0].toLowerCase() === 'e'|| x[0].toLowerCase() ==='i'|| x[0].toLowerCase() ==='o'|| x[0].toLowerCase() ==='u'))
 }
 
 const filter5Vowels = (arr) => {
     let arr1 = arr.filter((x) => {
         let n = 0
         for (let i = 0; i < x.length; i++) {
-            if (x[i] === 'a' || x[i] === 'e'|| x[i] ==='i'|| x[i] ==='o'|| x[i] ==='u') {
+            if (x[i].toLowerCase() === 'a' || x[i].toLowerCase() === 'e'|| x[i].toLowerCase() ==='i'|| x[i].toLowerCase() ==='o'|| x[i].toLowerCase() ==='u') {
                 n++
             }
         }
@@ -23,7 +23,7 @@ const filter1DistinctVowel = (arr) => {
     let arr1 = arr.filter((x) => {
         let n = []
         for (let i = 0; i < x.length; i++) {
-            if (x[i] === 'a' || x[i] === 'e'|| x[i] ==='i'|| x[i] ==='o'|| x[i] ==='u') {
+            if (x[i].toLowerCase() === 'a' || x[i].toLowerCase() === 'e'|| x[i].toLowerCase() ==='i'|| x[i].toLowerCase() ==='o'|| x[i].toLowerCase() ==='u') {
                 n.push(x[i])
             }
         }
@@ -53,7 +53,7 @@ const notVowel = (str) => {
 const hasVowel = (str) => {
     let x = str.split('')
     for (let i = 0; i < x.length; i++) {
-        if (x[i] === 'a' || x[i] === 'e'|| x[i] ==='i'|| x[i] ==='o'|| x[i] ==='u') {
+        if (x[i].toLowerCase() === 'a' || x[i].toLowerCase() === 'e'|| x[i].toLowerCase() ==='i'|| x[i].toLowerCase() ==='o'|| x[i].toLowerCase() ==='u') {
             return true
         }
     }
