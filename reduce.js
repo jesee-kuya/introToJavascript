@@ -19,7 +19,12 @@ const reduce = (arr, func, accumulator) => {
     if (arr.length < 1) {
         return 'Error'
     }
-    return fold(arr, func, accumulator)
+    accumulator = arr[0]
+    for (let i = 1; i < arr.length; i++) {
+        accumulator = func(arr[i], i, arr)
+    }
+    return accumulator
+    
 }
 
 const reduceRight = (arr, func, accumulator) => {
@@ -29,5 +34,10 @@ const reduceRight = (arr, func, accumulator) => {
     if (arr.length < 1) {
         return 'Error'
     }
-    return foldRight(arr, func, accumulator)
+    
+    accumulator = arr[arr.length-1]
+    for (let i = arr.length-2; i >= 0 ; i--) {
+        accumulator = func(arr[i], i, arr)
+    }
+    return accumulator
 }
