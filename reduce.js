@@ -24,5 +24,18 @@ const reduce = (arr, func, accumulator) => {
     if (!(arr instanceof Array && func instanceof Function)){
         return 'Error'
     }
+    if (arr.length < 1) {
+        return 'Error'
+    }
     return fold(arr, func, accumulator)
+}
+
+const reduceRight = (arr, func, accumulator) => {
+    if (!(arr instanceof Array && func instanceof Function)){
+        return 'Error'
+    }
+    if (arr.length < 1) {
+        return 'Error'
+    }
+    return foldRight(arr, func, accumulator)
 }
