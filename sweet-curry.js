@@ -12,3 +12,12 @@ const add3 = (a) => {
     }
 }
 
+const sub4 = (a) => {
+    return function(b) {
+        return function(c){
+            return function(d) {
+                return a - b - c - d;
+            }
+        }
+    }
+}
