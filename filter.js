@@ -22,8 +22,8 @@ const partition = (arr, func) => {
     let a = []
     let arr1 = filter(arr, func)
     let arr2 = filter(arr, func)
-    a[0].push(arr1)
-    a[1].push(arr2)
+   
+    a.push(arr1)
+    a.push(arr2)
     return a
 }
-
