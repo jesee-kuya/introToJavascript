@@ -15,6 +15,7 @@ const reject = (arr, func) => {
             arr1.push(arr[i])
         }
     }
+    return arr1
 }
 
 const partition = (arr, func) => {
