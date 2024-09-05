@@ -19,3 +19,10 @@ const foldRight = (arr, func, accumulator) => {
     }
     return n
 }
+
+const reduce = (arr, func, accumulator) => {
+    if (!(arr instanceof Array && func instanceof Function)){
+        return 'Error'
+    }
+    return fold(arr, func, accumulator)
+}
