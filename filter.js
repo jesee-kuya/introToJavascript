@@ -17,3 +17,12 @@ const reject = (arr, func) => {
     }
 }
 
+const partition = (arr, func) => {
+    let a = []
+    let arr1 = filter(arr, func)
+    let arr2 = filter(arr, func)
+    a.push(arr1)
+    a.push(arr2)
+    return a
+}
+
