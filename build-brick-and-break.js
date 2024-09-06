@@ -22,4 +22,7 @@ export const repair = (...ids) => {
     });
 }
 
-
+export const destroy = () => {
+    let bricks = document.getElementsByTagName("div");
+    bricks[bricks.length - 1].remove();
+}
