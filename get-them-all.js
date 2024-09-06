@@ -26,4 +26,4 @@ const getBonannoPisano = () => {
     ]
 }
 
-
+export {getArchitects, getClassical, getActive, getBonannoPisano}
