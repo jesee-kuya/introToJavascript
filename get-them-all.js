@@ -12,3 +12,10 @@ const getClassical = () => {
     ]
 }
 
+const getActive = () => {
+    return [
+        document.querySelector('a.classical.active'),
+        document.querySelector('a.classical:not(.active)'),
+    ]
+}
+
