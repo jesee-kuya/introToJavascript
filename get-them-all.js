@@ -19,3 +19,11 @@ const getActive = () => {
     ]
 }
 
+const getBonannoPisano = () => {
+    return [
+        document.getElementById('BonannoPisano'),
+        document.querySelectorAll('body a'),
+    ]
+}
+
+
