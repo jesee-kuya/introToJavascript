@@ -5,3 +5,10 @@ const getArchitects = () => {
     ]
 }
 
+const getClassical = () => {
+    return [
+        document.querySelector('a.classical'),
+        document.querySelector('a:not(.classical)'),
+    ]
+}
+
