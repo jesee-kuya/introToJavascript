@@ -13,3 +13,28 @@ export const createCircle = () => {
     hasEntered = false;
   });
 }
+
+export const  moveCircle = () => {
+    document.addEventListener('mousemove', (e) => {
+      if (lastCircle && box) {
+        const rect = box.getBoundingClientRect();
+        const circleRadius = 25;
+        let x = e.clientX - circleRadius;
+        let y = e.clientY - circleRadius;
+        const isInside = isInsideBox(x + circleRadius, y + circleRadius, rect, circleRadius);
+        if (isInside) {
+          hasEntered = true;
+        }
+        if (hasEntered) {
+          x = Math.max(rect.left + 1, Math.min(x, rect.right - circleRadius * 2 - 1));
+          y = Math.max(rect.top + 1, Math.min(y, rect.bottom - circleRadius * 2 - 1));
+          lastCircle.style.background = 'var(--purple)';
+        } else {
+          lastCircle.style.background = 'white';
+        }
+        lastCircle.style.left = `${x}px`;
+        lastCircle.style.top = `${y}px`;
+      }
+    });
+  }
+ 
