@@ -38,3 +38,16 @@ export const  moveCircle = () => {
     });
   }
  
+  export const setBox = () => {
+    box = document.createElement('div');
+    box.className = 'box';
+    document.body.appendChild(box);
+  }
+  function isInsideBox(x, y, boxRect, circleRadius) {
+    return (
+      x > boxRect.left + circleRadius &&
+      x < boxRect.right - circleRadius &&
+      y > boxRect.top + circleRadius &&
+      y < boxRect.bottom - circleRadius
+    );
+  }
