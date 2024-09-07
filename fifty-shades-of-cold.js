@@ -24,5 +24,10 @@ export const generateColdShades = () => {
     });
 }
 
+export const choseShade = (shade) => {
+    document.querySelectorAll("div").forEach((div) => {
+        div.className = shade;
+    });
+}
 
 
