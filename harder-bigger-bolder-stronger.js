@@ -1,9 +1,8 @@
-export const generateLetters = () => {
-    let body = document.getElementsByTagName('body');
+export const generateLetters  = () => {
     let alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
     
     for (let i = 0 ; i < 120; i++) {
-        let letter = createElement('div')
+        let letter = document.createElement('div')
         letter.textContent = alphabet[Math.floor(Math.random() * alphabet.length)]
         letter.style.fontSize = `${11 + i}px`;
 
@@ -14,6 +13,6 @@ export const generateLetters = () => {
         }else {
             letter.style.fontWeight = '600'
         }
-        body[0].appendChild(letter)
+        document.getElementsByTagName('body')[0].appendChild(letter)
     }
 }
