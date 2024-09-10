@@ -27,6 +27,3 @@ const reduceValues = (obj, func, acc) => {
     }
     return acc
 }
-
-const nutrients = { carbohydrates: 12, protein: 20, fat: 5 }
-console.log(reduceValues(nutrients, (acc, cr) => acc + cr))
