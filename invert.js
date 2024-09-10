@@ -4,7 +4,7 @@ const invert = (obj) => {
     let key = Object.keys(obj)
     let i = 0
 
-    for (char of val) {
+    for (let char of val) {
         n[String(char)] = key[i]
         i++
     }
