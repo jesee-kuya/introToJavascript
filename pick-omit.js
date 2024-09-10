@@ -19,3 +19,27 @@ const pick = (obj, str) => {
     }
     return n
 }
+
+const omit = (obj, str) => {
+    let val = Object.values(obj)
+    let key = Object.keys(obj)
+    let i = 0
+    let n = {}
+
+    if (typeof(str) === 'string') {
+        for (let char of key) {
+            if (String(char) !== str) {
+                n[String(char)] = val[i]
+            }
+        }
+    }else {
+        for (let char of key) {
+            if (!(str.includes(char))) {
+                n[String(char)] = val[i]
+            }
+        }
+    }
+        i++
+    return n
+}
+ 
