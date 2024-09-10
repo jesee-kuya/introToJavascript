@@ -44,3 +44,8 @@ const totalCalories = (entries) => {
         ).toFixed(1)
     );
 }
+
+const lowCarbs = (entries) => {
+    return filterEntries(entries, (entry) => {let value = (nutritionDB[entry[0]]["carbs"] / 100) * entry[1];return parseInt(value) <= 50;});
+}
+
