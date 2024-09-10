@@ -19,3 +19,17 @@ const mapKeys = (obj, func) => {
     }
     return n
 }
+
+const reduceKeys = (obj, func, acc) => {
+    let i = 0
+
+    for (let key in obj) {
+        if ((acc === undefined) && i === 0) {
+            acc = key
+        }else {
+            acc = func(acc, key)
+        }
+        i++
+    }
+    return acc
+}
