@@ -19,3 +19,15 @@ const mapEntries = (obj, func) => {
     return Object.fromEntries(arr)
 }
 
+const reduceEntries = (obj, func, acc) => {
+    if (acc === undefined) {
+        acc = 0
+    }
+    
+    let entries = Object.entries(obj)
+
+    for (let i = 0 ; i < entries.length; i++) {
+        acc = func(acc, entries[i])
+    }
+    return acc
+}
