@@ -31,15 +31,16 @@ const omit = (obj, str) => {
             if (String(char) !== str) {
                 n[String(char)] = val[i]
             }
+            i++
         }
     }else {
         for (let char of key) {
             if (!(str.includes(char))) {
                 n[String(char)] = val[i]
             }
+            i++
         }
     }
-        i++
     return n
 }
  
