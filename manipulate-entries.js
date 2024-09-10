@@ -8,3 +8,14 @@ const filterEntries = (obj, func) => {
     }
     return n
 }
+
+const mapEntries = (obj, func) => {
+    let arr = []
+    let entries = Object.entries(obj)
+
+    for (let i = 0 ; i < entries.length; i++) {
+        arr.push(func(entries[i]))
+    }
+    return Object.fromEntries(arr)
+}
+
