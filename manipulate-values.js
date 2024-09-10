@@ -17,5 +17,16 @@ const mapValues = (obj, func) => {
     return n
 }
 
+const reduceValues = (obj, func, acc) => {
+    if (acc === undefined) {
+        acc = 0
+    }
+
+    for (let key in obj) {
+        acc = func(acc, obj[key])
+    }
+    return acc
+}
+
 const nutrients = { carbohydrates: 12, protein: 20, fat: 5 }
-console.log(mapValues(nutrients, (v) => v+1))
+console.log(reduceValues(nutrients, (acc, cr) => acc + cr))
