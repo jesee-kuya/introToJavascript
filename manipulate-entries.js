@@ -31,3 +31,16 @@ const reduceEntries = (obj, func, acc) => {
     }
     return acc
 }
+
+const totalCalories = (entries) => {
+    return Number(
+        reduceEntries(
+            entries,
+            (acc, curr) => {
+                let value = (nutritionDB[curr[0]]["calories"] / 100) * curr[1];
+                return acc + value;
+            },
+            0
+        ).toFixed(1)
+    );
+}
