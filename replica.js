@@ -1,11 +1,9 @@
-const deepCopy = (output, input) => {
+const deepCopy = (input) => {
     if (Array.isArray(input)) {
-        for (var i = 0; i < input.length; i++) {
-            output[i] = deepCopy(input[i]);
-        }
-        return output;
-    } else if (isDefenitelyAnObject(input)) {
-        for (var key in input) {
+        return input.map(item => deepCopy(item));
+    } else if (isDefinitelyAnObject(input)) {
+        const output = {};
+        for (const key in input) {
             output[key] = deepCopy(input[key]);
         }
         return output;
@@ -14,17 +12,29 @@ const deepCopy = (output, input) => {
     }
 }
 
-const isDefenitelyAnObject = (input) => {
+const isDefinitelyAnObject = (input) => {
     return (
         typeof input === "object" &&
-        !(typeof input === "function") &&
-        !Array.isArray(input) &&
         input !== null &&
+        !Array.isArray(input) &&
         !(input instanceof RegExp)
     );
 }
 
-const replica = (output, ...inputs) => {
-    return inputs.reduce((acc, val) => deepCopy(acc, val), output)
+const replica = (target, ...sources) => {
+    for (const source of sources) {
+        if (isDefinitelyAnObject(source)) {
+            for (const key in source) {
+                if (isDefinitelyAnObject(source[key])) {
+                    if (!isDefinitelyAnObject(target[key])) {
+                        target[key] = {};
+                    }
+                    replica(target[key], source[key]);
+                } else {
+                    target[key] = deepCopy(source[key]);
+                }
+            }
+        }
+    }
+    return target;
 }
-
