@@ -1,34 +1,19 @@
-const deepCopy = (obj) => {
-    let n = {}
-    if (obj instanceof Array) {
-        n = []
-    }
-    if (obj instanceof Array || obj instanceof Object) {
-        for (let key in obj) {
-            if (obj[key] instanceof Array) {
-                n.push(deepCopy(obj[key]))
-            }else if (obj[key] instanceof Object) {
-                if (obj[key] instanceof RegExp || obj[key] instanceof Function || obj[key] instanceof Date) {
-                    if (n instanceof Array) {
-                        n.push(obj[key])
-                    }else {
-                        n[key] = obj[key]
-                    }
-                    continue
-                }
-                n[key] = (deepCopy(obj[key]))
-            }else {
-                if (n instanceof Array) {
-                    n.push(obj[key])
-                }else {
-                    n[key] = obj[key]
-                }
-            }
+const deepCopy = (input) => {
+    if (Array.isArray(input)) {
+        var output = [];
+        for (var i = 0; i < input.length; i++) {
+            output[i] = deepCopy(input[i]);
         }
-    }else {
-        n = obj
+        return output;
+    } else if (isDefenitelyAnObject(input)) {
+        var output = {};
+        for (var key in input) {
+            output[key] = deepCopy(input[key]);
+        }
+        return output;
+    } else {
+        return input;
     }
-    return n
 }
 
 const isDefenitelyAnObject = (input) => {
