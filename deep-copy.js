@@ -8,6 +8,10 @@ const deepCopy = (obj) => {
             if (obj[key] instanceof Array) {
                 n.push(deepCopy(obj[key]))
             }else if (obj[key] instanceof Object) {
+                if (obj[key] instanceof RegExp || obj[key] instanceof Function || obj[key] instanceof Date) {
+                    n.push(obj[key])
+                    continue
+                }
                 n[key] = (deepCopy(obj[key]))
             }else {
                 if (n instanceof Array) {
@@ -22,5 +26,3 @@ const deepCopy = (obj) => {
     }
     return n
 }
-
-console.log(deepCopy([1, 'a']))
