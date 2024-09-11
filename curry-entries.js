@@ -14,3 +14,15 @@ const mapCurry = (func) => {
         return n
     }
 }
+
+const reduceCurry = (func) => {
+    return function(obj1, acc) {
+        if (acc === undefined) {
+            acc = 0
+        }
+        for (let key in obj1) {
+            acc += (acc, key, obj1[key])
+        }
+        return acc
+    }
+}
