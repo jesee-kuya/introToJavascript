@@ -1,17 +1,22 @@
 const pronoun = (str) => {
     let obj = {};
     let regex = /\b(i|you|he|she|it|they|we)\b/gi;
-    let arr = str.split(' ');
+    let arr = str.split(/\s+/); // Split by any whitespace (including newlines)
 
     for (let i = 0; i < arr.length; i++) {
-        if (arr[i].match(regex)) {
-            if (!obj[arr[i]]) {
-                obj[arr[i]] = { word: [], count: 1 };
-            }else {
-                obj[arr[i]].count++
+        let word = arr[i].toLowerCase(); // Normalize to lowercase
+        if (word.match(regex)) {
+            if (!obj[word]) {
+                obj[word] = { word: [], count: 1 };
+            } else {
+                obj[word].count++;
             }
-            if (i + 1 < arr.length && !arr[i + 1].match(regex)) {
-                obj[arr[i]].word.push(arr[i + 1]);
+            // Check if the next word exists and is not a pronoun
+            if (i + 1 < arr.length) {
+                let nextWord = arr[i + 1].replace(/[^\w\s]/g, ''); // Remove punctuation
+                if (!nextWord.match(regex)) {
+                    obj[word].word.push(nextWord);
+                }
             }
         }
     }
