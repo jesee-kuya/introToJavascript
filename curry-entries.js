@@ -26,3 +26,15 @@ const reduceCurry = (func) => {
         return acc
     }
 }
+
+const filterCurry = (func) => {
+    return function(obj1) {
+        let n = {}
+        for (let key in obj1) {
+            if (func([key, obj1[key]])) {
+                n[key] = obj1[key]
+            }
+        }
+        return n
+    }
+}
