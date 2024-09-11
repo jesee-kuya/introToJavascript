@@ -9,7 +9,11 @@ const deepCopy = (obj) => {
                 n.push(deepCopy(obj[key]))
             }else if (obj[key] instanceof Object) {
                 if (obj[key] instanceof RegExp || obj[key] instanceof Function || obj[key] instanceof Date) {
-                    n.push(obj[key])
+                    if (n instanceof Array) {
+                        n.push(obj[key])
+                    }else {
+                        n[key] = obj[key]
+                    }
                     continue
                 }
                 n[key] = (deepCopy(obj[key]))
@@ -25,4 +29,14 @@ const deepCopy = (obj) => {
         n = obj
     }
     return n
+}
+
+const isDefenitelyAnObject = (input) => {
+    return (
+        typeof input === "object" &&
+        !(typeof input === "function") &&
+        !Array.isArray(input) &&
+        input !== null &&
+        !(input instanceof RegExp)
+    );
 }
