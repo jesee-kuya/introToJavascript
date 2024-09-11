@@ -44,3 +44,7 @@ const reduceScore = (obj1, obj2) => {
         v.isForceUser ? acc + v.pilotingScore + v.shootingScore : acc
     )(obj1, obj2);
 }
+
+const filterForce = (personnel) => {
+    return filterCurry(([, v]) => v.isForceUser && v.shootingScore >= 80)(personnel)
+}
