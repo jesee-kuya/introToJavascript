@@ -9,7 +9,7 @@ const mapCurry = (func) => {
         let n = {}
         for (let key in obj1) {
             let k = func([key, obj1[key]])
-            n[k[0]] = obj1[key]
+            n[k[0]] = k[1]
         }
         return n
     }
