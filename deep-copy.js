@@ -1,15 +1,24 @@
-function deepCopy(obj) {
-    if (typeof obj !== 'object' || obj === null) {
-        return obj; // Return directly if it's a primitive type or null
+const deepCopy = (obj) => {
+    let n = []
+    if (obj instanceof Object) {
+        n = {}
     }
-
-    let copy = Array.isArray(obj) ? [] : {}; // Create a new object or array
-
-    for (let key in obj) {
-        if (obj.hasOwnProperty(key)) {
-            copy[key] = deepCopy(obj[key]); // Recursively copy each property of the object
+    if (obj instanceof Array || obj instanceof Object) {
+        for (let key in obj) {
+            if (obj[key] instanceof Array) {
+                n.push(deepCopy(obj[i]))
+            }else if (obj[key] instanceof Object) {
+                n[key] = (deepCopy(obj[key]))
+            }else {
+                if (n instanceof Array) {
+                    n.push(obj[i])
+                }else {
+                    n[key] = obj[key]
+                }
+            }
         }
+    }else {
+        n = obj
     }
-
-    return copy;
+    return n
 }
