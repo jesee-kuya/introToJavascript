@@ -24,5 +24,7 @@ const isDefenitelyAnObject = (input) => {
     );
 }
 
-
+const replica = (output, ...inputs) => {
+    return inputs.reduce((acc, val) => deepCopy(acc, val), output)
+}
 
