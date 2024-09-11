@@ -21,7 +21,7 @@ const reduceCurry = (func) => {
             acc = 0
         }
         for (let key in obj1) {
-            acc += (acc, key, obj1[key])
+            acc = func(acc, [key, obj1[key]])
         }
         return acc
     }
@@ -38,3 +38,4 @@ const filterCurry = (func) => {
         return n
     }
 }
+
