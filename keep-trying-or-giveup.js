@@ -13,8 +13,8 @@ const retry = (count = 3, callback = async () => {}) => {
     }
 }
 
-const timeout = (delay = 0, callback = async () => {}) => {   
-    return async function(...args) {
+const timeout = (delay = 0, callback = async () => {}) => {
+    return async function (...args) {
         const timeout = new Promise((resolve) =>
             setTimeout(resolve, delay, Error('timeout'))
         );
@@ -25,8 +25,8 @@ const timeout = (delay = 0, callback = async () => {}) => {
             (res) => res
         );
         if (res instanceof Error) {
-            throw res
+            throw res;
         }
-        return res
+        return res;
     };
 }
