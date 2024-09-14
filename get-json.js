@@ -1,27 +1,25 @@
-async function getJson(path = '', params = {}) {
-    const queryString = Object.keys(params)
-        .map(key => 
-            `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`
-        )
-        .join('&');
-
-    const url = queryString ? `${path}?${queryString}` : path;
-
-    try {
-        const response = await fetch(url);
-        
-        if (!response.ok) {
+async function getJSON(path = '', params = {}) {
+    const url =
+        path +
+        '?' +
+        Object.keys(params)
+            .map((key) => {
+                return (
+                    key.replace(' ', '+') +
+                    '=' +
+                    params[key].toString().replace(' ', '+')
+                );
+            })
+            .join('&');
+    const res = await fetch(url).then((response) => {
+        if (response.ok) {
+            return response.json();
+        } else {
             throw new Error(response.statusText);
         }
-        
-        const res = await response.json();
-
-        if (res.error) {
-            throw new Error(res.error);
-        }
-        
-        return res.data;
-    } catch (error) {
-        throw error;
+    });
+    if (res.error) {
+        throw new Error(res.error);
     }
+    return res.data;
 }
