@@ -1,10 +1,12 @@
-const words = process.argv
-let arr = []
-
-if (words[2]) {
-    arr = words[2].split('/')
-}else {
-    arr = words[1].split('/')
+import { readdir } from 'node:fs/promises'
+let path = process.argv[2]
+if (path === undefined) {
+    path = process.cwd()
 }
 
-console.log(arr.length - 1)
+try {
+    let s = await readdir(path)
+    console.log(s.length)
+} catch(err) {
+    console.error(err)
+}
